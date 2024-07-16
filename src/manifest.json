@@ -29,26 +29,10 @@
     "logLevel": "debug"
   },
   "router": {
-    "entry": "pages/Demo",
+    "entry": "pages/Home",
     "pages": {
-      "pages/Demo": {
+      "pages/Home": {
         "component": "index"
-      },
-      "pages/DemoDetail": {
-        "component": "index"
-      }
-    },
-    "widgets": {
-      "CardDemo": {
-        "name": "CardDemo",
-        "description": "快应用卡片展示",
-        "component": "index",
-        "path": "/CardDemo",
-        "minPlatformVersion": 1032,
-        "targetManufactorys": [
-          "vivo"
-        ],
-        "features": []
       }
     }
   },
@@ -56,11 +40,8 @@
     "titleBarBackgroundColor": "#f2f2f2",
     "titleBarTextColor": "#414141",
     "pages": {
-      "pages/Demo": {
+      "pages/Home": {
         "titleBarText": "快应用示例模版"
-      },
-      "pages/DemoDetail": {
-        "titleBarText": "详情页"
       }
     }
   }

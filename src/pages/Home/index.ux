@@ -6,8 +6,7 @@
     <input
       class="btn"
       type="button"
-      value="跳转到详情页"
-      onclick="onDetailBtnClick"
+      value="试验数据"
     />
   </div>
 </template>
@@ -28,19 +27,12 @@ export default {
     this.$page.setTitleBar({ text: '欢迎体验快应用开发' })
     if (this.$page.setMeta) {
       this.$page.setMeta({
-        title: '快应用示例模版',
+        title: '快应用',
         description:
-          '快应用是移动互联网新型应用生态，与手机系统深度整合，为用户提供更加场景化的体验。具备传统APP完整的应用体验，但无需安装、即点即用。',
+          '快应用是移动互联网新型应用生态',
       })
     }
     // --------------------------------- Optimize SEO End
-  },
-
-  onDetailBtnClick() {
-    // 跳转到应用内的某个页面，router用法详见：文档 -> 接口 -> 页面路由
-    router.push({
-      uri: '/pages/DemoDetail',
-    })
   },
 }
 </script>
