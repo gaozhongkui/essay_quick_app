@@ -3,6 +3,7 @@
   <div class="demo-page">
     <text>{{ text }}</text>
     <text>{{ des }}</text>
+      <text>gaozhongkui</text>
   </div>
 </template>
 
