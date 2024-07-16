@@ -3,11 +3,7 @@
   <div class="wrapper">
     <text class="title">{{ title }}</text>
     <!-- 点击跳转详情页 -->
-    <input
-      class="btn"
-      type="button"
-      value="试验数据"
-    />
+    <input class="btn" type="button" value="试验数据" onclick="onButClick()" />
   </div>
 </template>
 
@@ -34,6 +30,38 @@ export default {
     }
     // --------------------------------- Optimize SEO End
   },
+
+  onButClick() {
+
+  }
+  ,
+  saveToFile(filePath, content) {
+    const file = require('@system.file');
+    file.writeText({
+      uri: filePath,
+      text: content,
+      success: function () {
+        console.log('File saved successfully');
+      },
+      fail: function (data, code) {
+        console.log(`Saving file failed. Error code: ${code}`);
+      }
+    });
+  },
+  readFromFile(filePath) {
+    const file = require('@system.file');
+    file.readText({
+      uri: filePath,
+      success: function (data) {
+        console.log(`File read successfully: ${data.text}`);
+      },
+      fail: function (data, code) {
+        console.log(`Reading file failed. Error code: ${code}`);
+      }
+    });
+  }
+
+
 }
 </script>
 

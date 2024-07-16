@@ -17,11 +17,20 @@
     },
     {
       "name": "system.fetch"
+    },
+    {
+      "name": "system.file"
     }
   ],
   "permissions": [
     {
       "origin": "*"
+    },
+    {
+      "origin": "system.storage"
+    },
+    {
+      "origin": "system.file"
     }
   ],
   "template/official": "demo-template",
