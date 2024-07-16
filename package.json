@@ -12,7 +12,10 @@
     "gen": "node ./scripts/gen/index.js",
     "precommit-msg": "echo '🚧 start pre-commit checks ...' && exit 0",
     "prettier": "node ./scripts/selfCloseInputTag.js && prettier --write \"src/**/*.{ux,js,json,less,scss,css,pcss,md,vue}\"",
-    "prettier-watcher": "onchange '**/*.md' \"src/**/**/*.{ux,js,json,less,scss,css,pcss,md,vue}\" -- prettier --write {{changed}}"
+    "prettier-watcher": "onchange '**/*.md' \"src/**/**/*.{ux,js,json,less,scss,css,pcss,md,vue}\" -- prettier --write {{changed}}",
+    "fa-build": "node node_modules/webpack/bin/webpack.js --config ./node_modules/fa-toolkit/webpack.config.js",
+    "fa-watch": "node node_modules/webpack/bin/webpack.js --watch --config ./node_modules/fa-toolkit/webpack.config.js",
+    "fa-release": "node ./node_modules/cross-env/src/bin/cross-env.js uglifyjs=true sign=release node_modules/webpack/bin/webpack.js --config ./node_modules/fa-toolkit/webpack.config.js"
   },
   "dependencies": {
     "apex-ui": "^1.9.2"
@@ -27,7 +30,9 @@
     "lint-staged": "^11.0.1",
     "onchange": "^5.2.0",
     "prettier": "^2.3.2",
-    "prettier-plugin-ux": "^0.3.0"
+    "prettier-plugin-ux": "^0.3.0",
+    "cross-env": "^7.0.2",
+    "fa-toolkit": "^14.0.1-Stable.300"
   },
   "prettier": {
     "singleQuote": true,

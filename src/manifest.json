@@ -19,6 +19,9 @@
       "name": "system.fetch"
     },
     {
+      "name": "system.storage"
+    },
+    {
       "name": "system.file"
     }
   ],
