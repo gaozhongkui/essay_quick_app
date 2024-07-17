@@ -1,6 +1,6 @@
 {
   "package": "com.gaozhongkui.test",
-  "name": "EssayQuickApp",
+  "name": "万能下载器",
   "versionName": "1.0.0",
   "versionCode": 1,
   "minPlatformVersion": 1070,
@@ -45,6 +45,12 @@
     "pages": {
       "pages/Home": {
         "component": "index"
+      },
+      "pages/Settings": {
+        "component": "index"
+      },
+      "pages/Container": {
+        "component": "index"
       }
     }
   },
@@ -53,7 +59,13 @@
     "titleBarTextColor": "#414141",
     "pages": {
       "pages/Home": {
-        "titleBarText": "快应用示例模版"
+        "titleBarText": "万能下载器"
+      },
+      "pages/Settings": {
+        "titleBarText": "设置页面"
+      },
+      "pages/Container": {
+        "titleBarText": "网页"
       }
     }
   }
