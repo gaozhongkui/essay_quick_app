@@ -1,74 +1,52 @@
 <template>
-  <div class="container">
-    <tabs class="tabs" onchange="changeTabactive" index="2">
-      <tab-content class="tab-content" scrollable="{{scrollable}}">
-        <!--basic component-->
-        <div class="item-container">
-          <text class="item-title">a</text>
-        </div>
-        <!--form component-->
-        <div class="item-container">
-           <text class="item-title">b</text>
-        </div>
-        <!--list component-->
-        <div class="item-container">
-           <text class="item-title">c</text>
-        </div>
-      </tab-content>
-
-      <tab-bar class="tab-bar">
-        <text class="tab-text">主页</text>
-        <text class="tab-text">Twitter</text>
-        <text class="tab-text">设置页面</text>
-      </tab-bar>
-    </tabs>
+  <!-- template里只能有一个根节点 -->
+  <div class="wrapper">
+    <text class="title">{{ text }}</text>
+    <text class="desc"
+      >快应用是移动互联网新型应用生态，与手机系统深度整合，为用户提供更加场景化的体验。具备传统APP完整的应用体验，但无需安装、即点即用。
+    </text>
+    <text class="desc"
+      >标准是由主流手机厂商组成的快应用联盟联合制定。其标准的诞生将在研发接口、能力接入、开发者服务等层面建设标准平台，以平台化的生态模式对个人开发者和企业开发者全品类开放
+    </text>
+    <input
+      class="btn"
+      type="button"
+      value="欢迎使用"
+    />
   </div>
 </template>
-<style>
-  .container {
-    flex: 1;
-    flex-direction: column;
-  }
-  .tabs {
-    flex: 1;
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-    background-color: #ffffff;
-  }
-  .tab-content {
-    flex: 1;
-  }
-  .tab-bar {
-    height: 100px;
-    border-color: #bbbbbb;
-    color: #bbbbbb;
-    border-bottom-width: 1px;
-  }
-  .tab-text {
-    width: 300px;
-    text-align: center;
-  }
-  .tab-text:active {
-    color: #f76160;
-  }
 
-</style>
 <script>
-  import prompt from '@system.prompt'
-  export default {
-    public: {
-      scrollable: true,
-    },
-    onInit: function () {
-      this.$page.setTitleBar({ text: 'tab-content' })
-    },
-    changeTabactive: function (e) {
-      prompt.showToast({
-        message: "the playing page number is " + e.index + "  "
-      })
-      // switch tab
-      console.log('----------switch tab: ' + e.index)
-    }
+export default {
+  private: {
+    text: '快应用是什么？',
   }
+}
 </script>
+
+<style lang="less">
+@import './../../assets/styles/style.less';
+
+.wrapper {
+  .flex-box-mixins(column, center, center);
+  margin: 0 10 * @size-factor;
+  .title {
+    font-size: 8 * @size-factor;
+    text-align: center;
+    color: @black;
+  }
+  .desc {
+    margin-top: 10 * @size-factor;
+    color: @grey;
+  }
+  .btn {
+    width: 90 * @size-factor;
+    height: 16 * @size-factor;
+    border-radius: 8 * @size-factor;
+    background-color: @brand;
+    color: @white;
+    font-size: 30px;
+    margin-top: 16 * @size-factor;
+  }
+}
+</style>

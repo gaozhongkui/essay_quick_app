@@ -1,0 +1,74 @@
+<template>
+  <div class="container">
+    <tabs class="tabs" onchange="changeTabactive" index="2">
+      <tab-content class="tab-content" scrollable="{{scrollable}}">
+        <!--basic component-->
+        <div class="item-container">
+          <text class="item-title">a</text>
+        </div>
+        <!--form component-->
+        <div class="item-container">
+           <text class="item-title">b</text>
+        </div>
+        <!--list component-->
+        <div class="item-container">
+           <text class="item-title">c</text>
+        </div>
+      </tab-content>
+
+      <tab-bar class="tab-bar">
+        <text class="tab-text">主页</text>
+        <text class="tab-text">Twitter</text>
+        <text class="tab-text">设置页面</text>
+      </tab-bar>
+    </tabs>
+  </div>
+</template>
+<style>
+  .container {
+    flex: 1;
+    flex-direction: column;
+  }
+  .tabs {
+    flex: 1;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+    background-color: #ffffff;
+  }
+  .tab-content {
+    flex: 1;
+  }
+  .tab-bar {
+    height: 100px;
+    border-color: #bbbbbb;
+    color: #bbbbbb;
+    border-bottom-width: 1px;
+  }
+  .tab-text {
+    width: 300px;
+    text-align: center;
+  }
+  .tab-text:active {
+    color: #f76160;
+  }
+
+</style>
+<script>
+  import prompt from '@system.prompt'
+  export default {
+    public: {
+      scrollable: true,
+    },
+    onInit: function () {
+      this.$page.setTitleBar({ text: 'tab-content' })
+    },
+    changeTabactive: function (e) {
+      prompt.showToast({
+        message: "the playing page number is " + e.index + "  "
+      })
+      // switch tab
+      console.log('----------switch tab: ' + e.index)
+    }
+  }
+</script>

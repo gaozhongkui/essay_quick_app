@@ -41,9 +41,12 @@
     "logLevel": "debug"
   },
   "router": {
-    "entry": "pages/Home",
+    "entry": "pages/Main",
     "pages": {
       "pages/Home": {
+        "component": "index"
+      },
+      "pages/Main": {
         "component": "index"
       },
       "pages/Settings": {
@@ -59,6 +62,9 @@
     "titleBarTextColor": "#414141",
     "pages": {
       "pages/Home": {
+        "titleBarText": "万能下载器"
+      },
+      "pages/Main": {
         "titleBarText": "万能下载器"
       },
       "pages/Settings": {
