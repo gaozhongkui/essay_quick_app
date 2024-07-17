@@ -43,16 +43,7 @@
   "router": {
     "entry": "pages/Main",
     "pages": {
-      "pages/Home": {
-        "component": "index"
-      },
       "pages/Main": {
-        "component": "index"
-      },
-      "pages/Settings": {
-        "component": "index"
-      },
-      "pages/Profile": {
         "component": "index"
       }
     }
@@ -61,17 +52,8 @@
     "titleBarBackgroundColor": "#f2f2f2",
     "titleBarTextColor": "#414141",
     "pages": {
-      "pages/Home": {
-        "titleBarText": "万能下载器"
-      },
       "pages/Main": {
         "titleBarText": "万能下载器"
-      },
-      "pages/Settings": {
-        "titleBarText": "设置页面"
-      },
-      "pages/Profile": {
-        "titleBarText": "网页"
       }
     }
   }

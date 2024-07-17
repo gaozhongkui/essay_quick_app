@@ -1,18 +1,21 @@
+<import name="home" src="../home/index.ux" />
+<import name="profile" src="../profile/index.ux" />
+<import name="settings" src="../settings/index.ux" />
 <template>
   <div class="container">
-    <tabs class="tabs" onchange="changeTabactive" index="2">
+    <tabs class="tabs" onchange="changeTabactive" index="0">
       <tab-content class="tab-content" scrollable="{{scrollable}}">
         <!--basic component-->
         <div class="item-container">
-          <text class="item-title">a</text>
+          <home></home>
         </div>
         <!--form component-->
         <div class="item-container">
-           <text class="item-title">b</text>
+          <profile></profile>
         </div>
         <!--list component-->
         <div class="item-container">
-           <text class="item-title">c</text>
+          <settings></settings>
         </div>
       </tab-content>
 
@@ -52,7 +55,6 @@
   .tab-text:active {
     color: #f76160;
   }
-
 </style>
 <script>
   import prompt from '@system.prompt'
