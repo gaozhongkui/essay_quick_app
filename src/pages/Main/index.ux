@@ -22,8 +22,8 @@
 
       <tab-bar class="tab-bar">
         <text class="tab-text">主页</text>
-        <text class="tab-text">Twitter</text>
-        <text class="tab-text">设置页面</text>
+        <text class="tab-text">骑行记录</text>
+        <text class="tab-text">设置</text>
       </tab-bar>
     </tabs>
   </div>
