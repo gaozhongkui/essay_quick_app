@@ -12,122 +12,156 @@
 //getCoordType        获取地图当前使用的坐标系
 //convertCoord        对坐标的坐标系进行转换
 <template>
-<div class="item-container">
-<map class="map" id = 'mapid' latitude=39.906901 longitude=116.397972 coordtype="gcj02" scale = 11
-rotate=0 @loaded="loaded" @regionchange="regionchange" @tap="tap"></map>
-<input type="button" class="btn" onclick="gotoGetCenter" value="获取中心点" />
-<input type="button" class="btn" onclick="gotoGetRegion" value="获取视野范围" />
-<input type="button" class="btn" onclick="gotoGetScale" value="获取地图缩放级别" />
-<input type="button" class="btn" onclick="gotoGetCoordType" value="获取当前坐标系" />
-<input type="button" class="btn" onclick="gotoConvertCoord" value="转换坐标系" />
-</div>
+  <div class="item-container">
+    <map
+      class="map"
+      id="mapid"
+      latitude="39.906901"
+      longitude="116.397972"
+      coordtype="gcj02"
+      scale="11"
+      rotate="0"
+      @loaded="loaded"
+      @regionchange="regionchange"
+      @tap="tap"
+    ></map>
+    <input
+      type="button"
+      class="btn"
+      onclick="gotoGetCenter"
+      value="获取中心点"
+    />
+    <input
+      type="button"
+      class="btn"
+      onclick="gotoGetRegion"
+      value="获取视野范围"
+    />
+    <input
+      type="button"
+      class="btn"
+      onclick="gotoGetScale"
+      value="获取地图缩放级别"
+    />
+    <input
+      type="button"
+      class="btn"
+      onclick="gotoGetCoordType"
+      value="获取当前坐标系"
+    />
+    <input
+      type="button"
+      class="btn"
+      onclick="gotoConvertCoord"
+      value="转换坐标系"
+    />
+  </div>
 </template>
 <style>
 .item-container {
-    flex-direction: column;
+  flex-direction: column;
 }
 .btn {
-    height: 80px;
-    text-align: center;
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 30px;
-    background-color: #0faeff;
+  height: 80px;
+  text-align: center;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 30px;
+  background-color: #0faeff;
 }
 .map {
-    background-color: #a9a9a9;
-    width: 750px;
-    height: 750px;
+  background-color: #a9a9a9;
+  flex: 1;
 }
 #mapid {
 }
 </style>
 <script>
 module.exports = {
-    data: {
-    },
-    loaded () {
-        console.log('map has been loaded')
-    },
-    regionchange (event) {
-        console.log('map regionchange' + " northeast latitude " + event.northeast.latitude + " northeast longitude " + event.northeast.longitude + " southwest.latitude " + event.southwest.latitude + " southwest.longitude " + event.southwest.longitude + " causeBy " + event.causeBy)
-    },
-    tap (event) {
-        console.log('map tap' + " latitude " + event.latitude + " longitude " + event.longitude)
-    },
-    gotoGetCenter() {
-        var mapcom = this.$element('mapid')
-        mapcom.getCenterLocation({
-            success:function(data) {
-                console.log("getCenterLocation latitude = " + data.latitude + " longitude = " + data.longitude);
-            },
-            fail:function() {
-                console.log("getCenterLocation fail");
-            },
-            complete:function() {
-                console.log("getCenterLocation complete");
-            }
-        })
-    },
-    gotoGetRegion() {
-        var mapcom = this.$element('mapid')
-        mapcom.getRegion({
-            success:function(data) {
-                console.log("getRegion southwest = " + data.southwest + " northeast = " + data.northeast);
-            },
-            fail:function() {
-                console.log("getRegion fail");
-            },
-            complete:function() {
-                console.log("getRegion complete");
-            }
-        })
-    },
-    gotoGetScale() {
-        var mapcom = this.$element('mapid')
-        mapcom.getScale({
-            success:function(data) {
-                console.log("getScale scale = " + data.scale);
-            },
-            fail:function() {
-                console.log("getScale fail");
-            },
-            complete:function() {
-                console.log("getScale complete");
-            }
-        })
-    },
-    gotoGetCoordType() {
-        var mapcom = this.$element('mapid')
-        mapcom.getCoordType({
-            success:function(data) {
-                console.log("getCoordType coordtype = "+data.coordtype);
-            },
-            fail:function() {
-                console.log("getCoordType fail");
-            },
-            complete:function() {
-                console.log("getCoordType complete");
-            }
-        })
-    },
-    gotoConvertCoord() {
-        var mapcom = this.$element('mapid')
-        mapcom.convertCoord({
-            from:'wgs84',
-            to:'gcj02',
-            latitude:39.747872,
-            longitude:116.438955,
-            success:function(data) {
-                console.log("convertCoord latitude = " + data.latitude + " longitude = " + data.longitude);
-            },
-            fail:function() {
-                console.log("convertCoord fail");
-            },
-            complete:function() {
-                console.log("convertCoord complete");
-            }
-        })
-    }
+  data: {
+  },
+  loaded() {
+    console.log('map has been loaded')
+  },
+  regionchange(event) {
+    console.log('map regionchange' + " northeast latitude " + event.northeast.latitude + " northeast longitude " + event.northeast.longitude + " southwest.latitude " + event.southwest.latitude + " southwest.longitude " + event.southwest.longitude + " causeBy " + event.causeBy)
+  },
+  tap(event) {
+    console.log('map tap' + " latitude " + event.latitude + " longitude " + event.longitude)
+  },
+  gotoGetCenter() {
+    var mapcom = this.$element('mapid')
+    mapcom.getCenterLocation({
+      success: function (data) {
+        console.log("getCenterLocation latitude = " + data.latitude + " longitude = " + data.longitude);
+      },
+      fail: function () {
+        console.log("getCenterLocation fail");
+      },
+      complete: function () {
+        console.log("getCenterLocation complete");
+      }
+    })
+  },
+  gotoGetRegion() {
+    var mapcom = this.$element('mapid')
+    mapcom.getRegion({
+      success: function (data) {
+        console.log("getRegion southwest = " + data.southwest + " northeast = " + data.northeast);
+      },
+      fail: function () {
+        console.log("getRegion fail");
+      },
+      complete: function () {
+        console.log("getRegion complete");
+      }
+    })
+  },
+  gotoGetScale() {
+    var mapcom = this.$element('mapid')
+    mapcom.getScale({
+      success: function (data) {
+        console.log("getScale scale = " + data.scale);
+      },
+      fail: function () {
+        console.log("getScale fail");
+      },
+      complete: function () {
+        console.log("getScale complete");
+      }
+    })
+  },
+  gotoGetCoordType() {
+    var mapcom = this.$element('mapid')
+    mapcom.getCoordType({
+      success: function (data) {
+        console.log("getCoordType coordtype = " + data.coordtype);
+      },
+      fail: function () {
+        console.log("getCoordType fail");
+      },
+      complete: function () {
+        console.log("getCoordType complete");
+      }
+    })
+  },
+  gotoConvertCoord() {
+    var mapcom = this.$element('mapid')
+    mapcom.convertCoord({
+      from: 'wgs84',
+      to: 'gcj02',
+      latitude: 39.747872,
+      longitude: 116.438955,
+      success: function (data) {
+        console.log("convertCoord latitude = " + data.latitude + " longitude = " + data.longitude);
+      },
+      fail: function () {
+        console.log("convertCoord fail");
+      },
+      complete: function () {
+        console.log("convertCoord complete");
+      }
+    })
+  }
 }
 </script>
