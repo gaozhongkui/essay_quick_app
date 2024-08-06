@@ -1,6 +1,6 @@
 {
   "package": "com.gaozhongkui.test",
-  "name": "万能下载器",
+  "name": "骑行领航员",
   "versionName": "1.0.0",
   "versionCode": 1,
   "minPlatformVersion": 1070,
@@ -53,7 +53,7 @@
     "titleBarTextColor": "#414141",
     "pages": {
       "pages/Main": {
-        "titleBarText": "万能下载器"
+        "titleBarText": "骑行领航员"
       }
     }
   }

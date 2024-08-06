@@ -1,6 +1,6 @@
-<import name="home" src="../home/index.ux" />
-<import name="profile" src="../profile/index.ux" />
-<import name="settings" src="../settings/index.ux" />
+<import name="home" src="../home/index.ux"></import>
+ <import name="profile" src="../profile/index.ux" ></import>
+<import name="settings" src="../settings/index.ux" ></import>
 <template>
   <div class="container">
     <div class="bottomLayout"></div>
@@ -29,61 +29,61 @@
   </div>
 </template>
 <style>
-  .container {
-    flex: 1;
-    flex-direction: column;
-  }
-  .bottomLayout {
-    background-image: url('/assets/images/main_tab_bj.png');
-    height: 116px; /* 设置与tab-bar相同的高度 */
-    width: 100%;
-    position: absolute; /* 绝对定位 */
-    bottom: 0; /* 底部对齐 */
-    z-index: 1; /* 置于顶层 */
-    justify-content: center;
-    align-items: center;
-  }
-  .tabs {
-    flex: 1;
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-  }
-  .tab-content {
-    flex: 1;
-  }
-  .tab-bar {
-    height: 100px;
-    background-color: #ffffff;
-    background-size: cover; /* 使图片覆盖整个容器 */
-    background-position: center; /* 图片居中对齐 */
-    color: #bbbbbb;
-    border-radius: 60px;
-    margin-bottom: 12px;
-  }
-  .tab-text {
-    width: 300px;
-    text-align: center;
-  }
-  .tab-text:active {
-    color: #f76160;
-  }
+.container {
+  flex: 1;
+  flex-direction: column;
+}
+.bottomLayout {
+  background-image: url('/assets/images/main_tab_bj.png');
+  height: 116px; /* 设置与tab-bar相同的高度 */
+  width: 100%;
+  position: absolute; /* 绝对定位 */
+  bottom: 0; /* 底部对齐 */
+  z-index: 1; /* 置于顶层 */
+  justify-content: center;
+  align-items: center;
+}
+.tabs {
+  flex: 1;
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.tab-content {
+  flex: 1;
+}
+.tab-bar {
+  height: 100px;
+  background-color: #ffffff;
+  background-size: cover; /* 使图片覆盖整个容器 */
+  background-position: center; /* 图片居中对齐 */
+  color: #bbbbbb;
+  border-radius: 60px;
+  margin-bottom: 12px;
+}
+.tab-text {
+  width: 300px;
+  text-align: center;
+}
+.tab-text:active {
+  color: #f76160;
+}
 </style>
 <script>
-  import prompt from '@system.prompt'
-  export default {
-    public: {
-      scrollable: true,
-    },
-    onInit: function () {
-      this.$page.setTitleBar({ text: '万能下载器' })
-    },
-    changeTabactive: function (e) {
-      prompt.showToast({
-        message: "the playing page number is " + e.index + "  "
-      })
-      // switch tab
-      console.log('----------switch tab: ' + e.index)
-    }
+import prompt from '@system.prompt'
+export default {
+  public: {
+    scrollable: true,
+  },
+  onInit: function () {
+    this.$page.setTitleBar({ text: '骑行领航员' })
+  },
+  changeTabactive: function (e) {
+    prompt.showToast({
+      message: "the playing page number is " + e.index + "  "
+    })
+    // switch tab
+    console.log('----------switch tab: ' + e.index)
   }
+}
 </script>
