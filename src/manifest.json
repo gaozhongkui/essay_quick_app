@@ -23,6 +23,9 @@
     },
     {
       "name": "system.file"
+    },
+    {
+      "name": "system.geolocation"
     }
   ],
   "permissions": [
