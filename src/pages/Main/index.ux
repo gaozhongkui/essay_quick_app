@@ -4,7 +4,7 @@
 <template>
   <div class="container">
     <div class="bottomLayout"></div>
-    <tabs class="tabs" onchange="changeTabactive" index="0">
+    <tabs class="tabs" onchange="changeTabactive" index="1">
       <tab-content class="tab-content" scrollable="{{scrollable}}">
         <!--basic component-->
         <div class="item-container">
